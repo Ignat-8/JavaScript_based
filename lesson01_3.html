@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Будет выведена строка 2010, т.к. сначала будет выполнено сложение чисел, а зетем их сложение со строкой
+        let result1 = 10 + 10 + "10";
+        console.log(result1);
+
+        //Будет выведена строка 101010, т.к. средняя переменная строка
+        let result2 = 10 + "10" + 10;
+        console.log(result2);
+
+        //Будет выведено число 30, т.к. знак "+" перед строкой "10" преобразует к числовому типу данных
+        let result3 = 10 + 10 + +"10";
+        console.log(result3);
+
+        //Будет выведено число -Infinity, т.к. знак "-" перед пустой строкой "" преобразует к числу -0
+        let result4 = 10 / -"";
+        console.log(result4);
+
+        //Будет выведено NaN, т.к. знак "+" перед строкой "2,5" приведет к неудачному преобразованию в числовой тип данных
+        let result5 = 10 / +"2,5";
+        console.log(result5);
+    </script>
+</body>
+
+</html>
