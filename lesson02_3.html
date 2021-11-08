@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Объявить две переменные a и b и задать им целочисленные произвольные начальные значения.
+        Затем написать скрипт, который работает по следующему принципу:
+        - если a и b положительные, вывести их разность (ноль можно считать положительным числом);
+        - если а и b отрицательные, вывести их произведение;
+        - если а и b разных знаков, вывести их сумму;
+        */
+        'use strict';
+        let a = parseInt(prompt("Введите число а"));
+        let b = parseInt(prompt("Введите число b"));
+
+        function a_and_b(a, b) {
+            if (a >= 0 && b >= 0) {
+                return a - b;
+            };
+            if (a < 0 && b < 0) {
+                return a * b;
+            };
+            return a + b;
+        };
+
+        alert(a_and_b(a, b));
+    </script>
+</body>
+
+</html>
