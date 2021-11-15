@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Написать функцию, преобразующую число в объект. Передавая на вход число 
+        в диапазоне [0, 999], мы должны получить на выходе объект, в котором в 
+        соответствующих свойствах описаны разряды числа:
+            - единицы (в свойстве units)
+            - десятки (в свойстве tens)
+            - сотни (в свойстве hundereds)
+        Например, для числа 45 мы должны получить следующий объект:
+            {
+            units: 5, //это единицы
+            tens: 4, //это десятки
+            hundreds: 0, //это сотни
+            }
+        Если число было передано вне [0, 999] диапазона, не целое число или 
+        вообще не число, необходимо выдать соответствующее сообщение с помощью 
+        console.log и вернуть пустой объект. */
+        
+        "use strict";
+        
+        let input_number = parseInt(prompt("Введите число из диапазона [0, 999]"));
+        //--------------------------------------------------------------
+        function number_to_object(value){
+            let number_obj = {};
+            let c = 0; // счетчик разряда числа
+            do{
+                ++c;
+                if (c === 1){
+                    number_obj.units = input_number - 10 * Math.floor(input_number / 10);
+                };
+                if (c === 2){
+                    number_obj.tens = input_number - 10 * Math.floor(input_number / 10);
+                };
+                if (c === 3){
+                    number_obj.hundreds = input_number - 10 * Math.floor(input_number / 10);
+                };
+                input_number = Math.floor(input_number / 10)
+            } while (input_number != 0);
+            return number_obj;
+        };
+        //---------------------------------------------------------------
+        if (input_number){
+            if (input_number >= 0 && input_number <= 999){
+                console.log(number_to_object(input_number));
+            } else {
+                console.log("Ошибка - вы ввели число не из диапазона [0, 999]");
+            };
+        } else {
+            console.log("Ошибка - вы ввели не число");
+        };
+        //----------------------------------------------------------------
+    </script>
+</body>
+</html>
